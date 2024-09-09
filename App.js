@@ -6,6 +6,10 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import LoginScreen from './src/screens/LoginScreen';
 import RegisterScreen from './src/screens/RegisterScreen';
+import PlayScreen from './src/screens/PlayScreen';
+import WinScreen from './src/screens/WinScreen';
+import LoseScreen from './src/screens/LoseScreen';
+
 import colors from './src/theme/colors';
 
 const Stack = createNativeStackNavigator();
@@ -26,6 +30,21 @@ function App() {
       }}
     >
       <Stack.Navigator>
+      <Stack.Screen
+          name="WinScreen"
+          component={WinScreen}
+          options={{
+            title: "",
+            headerShown: false,
+          }}
+        />
+        <Stack.Screen
+          name="PlayScreen"
+          component={PlayScreen}
+          options={{
+            headerShown: false,
+          }}
+        />
         <Stack.Screen
           name="LoginScreen"
           component={LoginScreen}
@@ -37,8 +56,15 @@ function App() {
           name="RegisterScreen"
           component={RegisterScreen}
           options={{
+            headerShown: false,
+          }}
+        />
+        <Stack.Screen
+          name="LoseScreen"
+          component={LoseScreen}
+          options={{
             title: "",
-            headerTransparent: true,
+            headerShown: false,
           }}
         />
       </Stack.Navigator>

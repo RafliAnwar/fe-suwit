@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput, TouchableOpacity } from 'react-native';
+import { View, Text, TextInput, TouchableOpacity, StyleSheet } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
 const LoginScreen = () => {
@@ -35,7 +35,12 @@ const LoginScreen = () => {
             </View>
 
             <TouchableOpacity
-                style={styles.loginBtn}>
+                style={styles.loginBtn}
+                onPress={() => {
+                    navigation.navigate('PlayScreen', {
+                    })
+                }}
+            >
                 <Text style={styles.loginText}>LOGIN </Text>
             </TouchableOpacity>
 
