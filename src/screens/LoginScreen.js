@@ -1,15 +1,34 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput, TouchableOpacity, StyleSheet } from 'react-native';
+import { View, Text, TextInput, TouchableOpacity, StyleSheet, Image, ImageBackground } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
 const LoginScreen = () => {
     const [passwordVisible, setPasswordVisible] = useState(false);
     const navigation = useNavigation();
 
-    return (
-        <View style={styles.screen}>
-            <Text style={[{ marginBottom: 10, fontSize: 20 }]}>Login Screen</Text>
+    const handleLogin = () => {
+        if (username === 'user' && password === 'password') {
+            // Login berhasil
+            Alert.alert('Login Success', 'You have successfully logged in!');
+            navigation.navigate('GameScreen'); // Navigasi ke GameScreen setelah login berhasil
+        } else {
+            // Login gagal
+            Alert.alert('Login Failed', 'Username or password is incorrect.');
+        }
+    };
 
+    return (
+        <ImageBackground
+            source={require('../assets/Login.png')}
+            style={styles.background}
+        >
+            <View>
+                <TextInput
+                    style={styles.emailInput}
+                    placeholder="Email"
+                    placeholderTextColor="#003f5c"
+                />
+            </View>
             <View style={styles.emailContainer}>
                 <TextInput
                     style={styles.emailInput}
@@ -37,7 +56,7 @@ const LoginScreen = () => {
             <TouchableOpacity
                 style={styles.loginBtn}
                 onPress={() => {
-                    navigation.navigate('PlayScreen', {
+                    navigation.navigate('GameScreen', {
                     })
                 }}
             >
@@ -45,40 +64,54 @@ const LoginScreen = () => {
             </TouchableOpacity>
 
             {/* sign up */}
-            <TouchableOpacity style={[{
-                position: 'absolute',
-                bottom: 30
-            }]}
-                onPress={() => {
-                    navigation.navigate('RegisterScreen', {
-                    })
-                }}
-            >
-                <Text style={styles.forgot}>Sign Up</Text>
-            </TouchableOpacity>
+            <View style={styles.signup}>
+                <Text style={{}}>Don't have account?</Text>
+                <TouchableOpacity style={[{
+                }]}
+                    onPress={() => {
+                        navigation.navigate('RegisterScreen', {
+                        })
+                    }}
+                >
+                    <Text style={styles.forgot}>Sign Up</Text>
 
-        </View>
+                </TouchableOpacity>
+            </View>
+        </ImageBackground>
     );
 };
 
 const styles = {
-    screen: {
+    background: {
         flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-        backgroundColor: '#D2E0FB',
-        position: 'relative',
+        resizeMode: "cover",
     },
+    signup: {
+        marginTop: 12,
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'center'
+    },
+
+    // screen: {
+    //     flex: 1,
+    //     justifyContent: 'center',
+    //     alignItems: 'center',
+    //     backgroundColor: '#D2E0FB',
+    //     position: 'relative',
+    // },
     emailContainer: {
         flexDirection: 'row',
         alignItems: 'center',
+        marginTop: 400,
         marginVertical: 10,
         borderWidth: 1,
         borderColor: '#ccc',
         borderRadius: 20,
         padding: 10,
         width: "70%",
-        backgroundColor: "#fff",
+        backgroundColor: "#0ec6dE",
+        alignSelf: 'center',
     },
     passContainer: {
         position: 'relative',
@@ -90,7 +123,8 @@ const styles = {
         borderRadius: 20,
         padding: 10,
         width: "70%",
-        backgroundColor: "#fff",
+        backgroundColor: "#0ec6dE",
+        alignSelf: 'center',
     },
     emailInput: {
         flex: 1,
@@ -112,17 +146,23 @@ const styles = {
         justifyContent: 'center',
     },
     loginBtn: {
-        backgroundColor: '#2196F3',
+        backgroundColor: '#FFDB0A',
         borderRadius: 20,
         padding: 10,
         width: "40%",
         alignItems: 'center',
-        marginTop: 20,
+        marginTop: 10,
         shadowColor: '#171717',
         shadowOffset: { width: -2, height: 4 },
         shadowOpacity: 0.2,
         shadowRadius: 3,
-    }
+        alignSelf: 'center',
+    },
+
+    forgot: {
+        textDecorationLine: 'underline',
+        color: '#0ec6dE'
+    },
 };
 
 export default LoginScreen;
