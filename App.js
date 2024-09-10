@@ -9,6 +9,7 @@ import RegisterScreen from './src/screens/RegisterScreen';
 import PlayScreen from './src/screens/PlayScreen';
 import WinScreen from './src/screens/WinScreen';
 import LoseScreen from './src/screens/LoseScreen';
+import StartScreen from './src/screens/StartScreen';
 
 import colors from './src/theme/colors';
 
@@ -30,6 +31,13 @@ function App() {
       }}
     >
       <Stack.Navigator>
+        <Stack.Screen
+          name='StartScreen'
+          component={StartScreen}
+          options={{
+            headerShown: false,
+          }}
+        />
         <Stack.Screen
           name="PlayScreen"
           component={PlayScreen}

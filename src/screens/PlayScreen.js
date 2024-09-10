@@ -17,12 +17,16 @@ const PlayScreen = () => {
     const navigation = useNavigation();
     const route = useRoute(); // Untuk mendapatkan parameter dari navigasi
 
-    // State untuk menyimpan pilihan pemain, komputer, ronde, dan skor
+    // State untuk menyimpan pilihan pemain, komputer
     const [playerChoice, setPlayerChoice] = useState(rockLeft);
     const [compChoice, setCompChoice] = useState(rockRight);
-    const [round, setRound] = useState(1);  // State untuk ronde, mulai dari 1
-    const [playerScore, setPlayerScore] = useState(0); // State untuk skor pemain
-    const [compScore, setCompScore] = useState(0); // State untuk skor komputer
+    const [round, setRound] = useState(1);  // State untuk ronde, start dari 1
+    const [playerScore, setPlayerScore] = useState(0); // State skor pemain
+    const [compScore, setCompScore] = useState(0); // State skor komputer
+
+    const goToHome = () => {
+        navigation.navigate('StartScreen');
+    };
 
     // Array untuk pilihan acak komputer
     const choices = [
@@ -118,9 +122,7 @@ const PlayScreen = () => {
             <TouchableOpacity
                 style={styles.btn_home}
                 activeOpacity={0.7}
-                onPress={() => {
-                    navigation.navigate('RegisterScreen', {})
-                }}
+                onPress={goToHome}
             >
                 <Image
                     source={home_btn}

@@ -15,6 +15,10 @@ const LoseScreen = () => {
         navigation.navigate('PlayScreen', { reset: true }); // Kirim parameter reset
     };
 
+    const goToHome = () => {
+        navigation.navigate('StartScreen');
+    };
+
     return (
         <View style={styles.screen}>
             <View style={styles.winContainer}>
@@ -30,7 +34,9 @@ const LoseScreen = () => {
                 />
             </View>
             <View style={styles.buttonContainer}>
-                <TouchableOpacity>
+                <TouchableOpacity
+                    onPress={goToHome}
+                >
                     <Image
                         source={home_btn}
                         style={styles.button}
