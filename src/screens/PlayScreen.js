@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, Image } from 'react-native';
-import { useNavigation } from '@react-navigation/native';
+import { useNavigation, useRoute } from '@react-navigation/native';
 
 import home_btn from '../assets/home_btn.png';
 import rockLeft from '../assets/rockLeft.png';
@@ -15,6 +15,7 @@ import rock from '../assets/rock.png';
 
 const PlayScreen = () => {
     const navigation = useNavigation();
+    const route = useRoute(); // Untuk mendapatkan parameter dari navigasi
 
     // State untuk menyimpan pilihan pemain, komputer, ronde, dan skor
     const [playerChoice, setPlayerChoice] = useState(rockLeft);
@@ -46,6 +47,20 @@ const PlayScreen = () => {
         }
     };
 
+    // Function reset skor dan ronde
+    const resetGame = () => {
+        setRound(1);
+        setPlayerScore(0);
+        setCompScore(0);
+    };
+
+    // Reset game jika parameter "reset" dikirimkan
+    useEffect(() => {
+        if (route.params?.reset) {
+            resetGame();
+        }
+    }, [route.params]);
+
     // Function untuk mengubah gambar dan hitung skor berdasarkan pilihan
     const handleChoice = (choice) => {
         // Mengubah pilihan pemain
@@ -76,25 +91,24 @@ const PlayScreen = () => {
         // Tentukan pemenang dan update skor
         const winner = getWinner(choice, compPick.name);
         if (winner === 'player') {
-            setPlayerScore((prevScore) => {
-                const newScore = prevScore + 1;
-                // Jika skor mencapai 5, arahkan ke halaman menang
-                if (newScore === 5) {
-                    navigation.navigate('RegisterScreen');
-                }
-                return newScore;
-            });
-        } else if (winner === 'comp') {
-            setCompScore((prevScore) => {
-                const newScore = prevScore + 1;
-                // Jika skor komputer mencapai 5, arahkan ke halaman kalah
-                if (newScore === 5) {
-                    navigation.navigate('LoginScreen');
-                }
-                return newScore;
-            });
-        }
+            const newPlayerScore = playerScore + 1;
+            setPlayerScore(newPlayerScore);
 
+            // Cek apakah skor sudah mencapai 5 setelah pembaruan state
+            if (newPlayerScore === 5) {
+                resetGame();  // Reset skor dan ronde
+                navigation.navigate('WinScreen');  // Arahkan ke halaman win
+            }
+        } else if (winner === 'comp') {
+            const newCompScore = compScore + 1;
+            setCompScore(newCompScore);
+
+            // Cek apakah skor komputer sudah mencapai 5 setelah pembaruan state
+            if (newCompScore === 5) {
+                resetGame();  // Reset skor dan ronde
+                navigation.navigate('LoseScreen');  // Arahkan ke halaman kalah
+            }
+        }
         // Tambah ronde setelah pemain memilih
         setRound((prevRound) => prevRound + 1);
     };
@@ -124,14 +138,14 @@ const PlayScreen = () => {
             <View style={styles.rpsContainer}>
                 <View style={styles.rpsLeft}>
                     <Image
-                        source={playerChoice} // Menggunakan gambar sesuai pilihan pemain
+                        source={playerChoice} // randUser
                         style={styles.rpsImage}
                         resizeMode="cover"
                     />
                 </View>
                 <View style={styles.rpsRight}>
                     <Image
-                        source={compChoice} // Menggunakan gambar acak untuk komputer
+                        source={compChoice} //randComp
                         style={styles.rpsImage}
                         resizeMode="cover"
                     />

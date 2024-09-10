@@ -30,7 +30,14 @@ function App() {
       }}
     >
       <Stack.Navigator>
-      <Stack.Screen
+        <Stack.Screen
+          name="PlayScreen"
+          component={PlayScreen}
+          options={{
+            headerShown: false,
+          }}
+        />
+        <Stack.Screen
           name="WinScreen"
           component={WinScreen}
           options={{
@@ -39,9 +46,10 @@ function App() {
           }}
         />
         <Stack.Screen
-          name="PlayScreen"
-          component={PlayScreen}
+          name="LoseScreen"
+          component={LoseScreen}
           options={{
+            title: "",
             headerShown: false,
           }}
         />
@@ -56,14 +64,6 @@ function App() {
           name="RegisterScreen"
           component={RegisterScreen}
           options={{
-            headerShown: false,
-          }}
-        />
-        <Stack.Screen
-          name="LoseScreen"
-          component={LoseScreen}
-          options={{
-            title: "",
             headerShown: false,
           }}
         />
