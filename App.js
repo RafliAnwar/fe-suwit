@@ -12,6 +12,9 @@ import Splash from './src/screens/Splash';
 import GameScreen from './src/screens/GameScreen';
 import SignupScreen from './src/screens/SignupScreen';
 import Instruction from './src/screens/Instruction';
+import InstructionNext1 from './src/screens/InstructionNext1';
+import InstructionNext2 from './src/screens/InstructionNext2';
+import InstructionNext3 from './src/screens/InstructionNext3';
 
 import colors from './src/theme/colors';
 
@@ -87,6 +90,27 @@ function App() {
         <Stack.Screen
           name="Instruction"
           component={Instruction}
+          options={{
+            headerShown: false,
+          }}
+        />
+        <Stack.Screen
+          name="InstructionNext1"
+          component={InstructionNext1}
+          options={{
+            headerShown: false,
+          }}
+        />
+        <Stack.Screen
+          name="InstructionNext2"
+          component={InstructionNext2}
+          options={{
+            headerShown: false,
+          }}
+        />
+        <Stack.Screen
+          name="InstructionNext3"
+          component={InstructionNext3}
           options={{
             headerShown: false,
           }}

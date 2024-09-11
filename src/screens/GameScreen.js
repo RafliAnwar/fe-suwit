@@ -27,7 +27,7 @@ const GameScreen = ({ navigation }) => {
 
         <TouchableOpacity
           style={[styles.button, styles.instruction]}
-          onPress={() => navigation.navigate('Instruction')} // Tampilkan instruksi atau navigasi ke instruksi
+          onPress={() => navigation.navigate('InstructionNext1')} // Tampilkan instruksi atau navigasi ke instruksi
         >
           <Text style={styles.buttonText}>Instruction</Text>
         </TouchableOpacity>

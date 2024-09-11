@@ -17,7 +17,7 @@ const InstructionNext3 = () => {
 
   const navigation = useNavigation();
   const playy = () => {
-    navigation.navigate("InstructionNext2");  // nanti diubah ke halaman instruksi manual
+    navigation.navigate("Instruction");  // nanti diubah ke halaman instruksi manual
   };
   return (
     <ImageBackground
