@@ -16,7 +16,7 @@ const LoseScreen = () => {
     };
 
     const goToHome = () => {
-        navigation.navigate('StartScreen');
+        navigation.navigate('GameScreen');
     };
 
     return (

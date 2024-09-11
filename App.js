@@ -5,11 +5,13 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import LoginScreen from './src/screens/LoginScreen';
-import RegisterScreen from './src/screens/RegisterScreen';
 import PlayScreen from './src/screens/PlayScreen';
 import WinScreen from './src/screens/WinScreen';
 import LoseScreen from './src/screens/LoseScreen';
-import StartScreen from './src/screens/StartScreen';
+import Splash from './src/screens/Splash';
+import GameScreen from './src/screens/GameScreen';
+import SignupScreen from './src/screens/SignupScreen';
+import Instruction from './src/screens/Instruction';
 
 import colors from './src/theme/colors';
 
@@ -32,8 +34,29 @@ function App() {
     >
       <Stack.Navigator>
         <Stack.Screen
-          name='StartScreen'
-          component={StartScreen}
+          name='Splash'
+          component={Splash}
+          options={{
+            headerShown: false,
+          }}
+        />
+        <Stack.Screen
+          name="LoginScreen"
+          component={LoginScreen}
+          options={{
+            headerShown: false,
+          }}
+        />
+        <Stack.Screen
+          name="SignupScreen"
+          component={SignupScreen}
+          options={{
+            headerShown: false,
+          }}
+        />
+        <Stack.Screen
+          name="GameScreen"
+          component={GameScreen}
           options={{
             headerShown: false,
           }}
@@ -62,15 +85,8 @@ function App() {
           }}
         />
         <Stack.Screen
-          name="LoginScreen"
-          component={LoginScreen}
-          options={{
-            headerShown: false,
-          }}
-        />
-        <Stack.Screen
-          name="RegisterScreen"
-          component={RegisterScreen}
+          name="Instruction"
+          component={Instruction}
           options={{
             headerShown: false,
           }}

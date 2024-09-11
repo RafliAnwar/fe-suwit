@@ -25,7 +25,7 @@ const PlayScreen = () => {
     const [compScore, setCompScore] = useState(0); // State skor komputer
 
     const goToHome = () => {
-        navigation.navigate('StartScreen');
+        navigation.navigate('GameScreen');
     };
 
     // Array untuk pilihan acak komputer

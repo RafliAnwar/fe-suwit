@@ -11,7 +11,7 @@ const SignupScreen = () => {
 
     return (
         <ImageBackground 
-            source={require('../assets/Login.jpg')}
+            source={require('../assets/Login.png')}
             style={styles.background}
         >
             <View style={styles.container}>
@@ -57,7 +57,7 @@ const SignupScreen = () => {
                 <TouchableOpacity
                     style={styles.loginBtn}
                     onPress={() => {
-                        navigation.navigate('PlayScreen', {
+                        navigation.navigate('GameScreen', {
                             name,
                             email,
                             password,
@@ -70,7 +70,7 @@ const SignupScreen = () => {
                 <TouchableOpacity
                     style={styles.signUpBtn}
                     onPress={() => {
-                        navigation.navigate('PlayScreen');
+                        navigation.navigate('GameScreen');
                     }}
                 >
                 </TouchableOpacity>

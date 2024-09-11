@@ -7,7 +7,7 @@ const Splash = ({ navigation }) => {
     // Set timer untuk mengarahkan ke layar login setelah 3 detik
     const timer = setTimeout(() => {
       navigation.replace('LoginScreen'); // Ganti ke LoginScreen setelah splash
-    }, 5000);
+    }, 3000);
 
     return () => clearTimeout(timer); // Bersihkan timer jika komponen di-unmount
   }, [navigation]);

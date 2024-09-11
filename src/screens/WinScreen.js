@@ -16,7 +16,7 @@ const WinScreen = () => {
     };
 
     const goToHome = () => {
-        navigation.navigate('StartScreen');
+        navigation.navigate('GameScreen');
     };
 
     return (

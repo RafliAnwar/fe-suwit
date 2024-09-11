@@ -22,13 +22,13 @@ const LoginScreen = () => {
             source={require('../assets/Login.png')}
             style={styles.background}
         >
-            <View>
+            {/* <View>
                 <TextInput
                     style={styles.emailInput}
                     placeholder="Email"
                     placeholderTextColor="#003f5c"
                 />
-            </View>
+            </View> */}
             <View style={styles.emailContainer}>
                 <TextInput
                     style={styles.emailInput}
@@ -69,7 +69,7 @@ const LoginScreen = () => {
                 <TouchableOpacity style={[{
                 }]}
                     onPress={() => {
-                        navigation.navigate('RegisterScreen', {
+                        navigation.navigate('SignupScreen', {
                         })
                     }}
                 >
@@ -92,14 +92,6 @@ const styles = {
         alignItems: 'center',
         justifyContent: 'center'
     },
-
-    // screen: {
-    //     flex: 1,
-    //     justifyContent: 'center',
-    //     alignItems: 'center',
-    //     backgroundColor: '#D2E0FB',
-    //     position: 'relative',
-    // },
     emailContainer: {
         flexDirection: 'row',
         alignItems: 'center',
