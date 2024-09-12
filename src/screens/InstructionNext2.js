@@ -5,9 +5,8 @@ import {
   Dimensions,
   TouchableOpacity,
   Text,
-  View
+  View,
 } from "react-native";
-// import { View } from "react-native-web";
 import { useNavigation } from "@react-navigation/native";
 
 const { width, height } = Dimensions.get("window");
@@ -38,7 +37,7 @@ const styles = StyleSheet.create({
     flex: 1,
     width: width, // Mengisi seluruh lebar layar
     height: height, // Mengisi seluruh tinggi layar
-    marginTop: 30
+    marginTop: 30,
   },
   nextButton: {
     backgroundColor: "#0EC6DE",
