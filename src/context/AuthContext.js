@@ -4,7 +4,7 @@ import * as SecureStore from "expo-secure-store";
 
 const TOKEN_KEY = "token";
 export const API_URL = "https://be-suwit.ruhyadi.com";
-const AuthContext = createContext();
+const AuthContext = createContext({});
 
 export const useAuth = () => {
   return useContext(AuthContext);
@@ -21,7 +21,7 @@ export const AuthProvider = ({ children }) => {
       const token = await SecureStore.getItemAsync(TOKEN_KEY);
       if (token) {
         axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
-        setAuthState({ token: token, authenticated: true });
+        setAuthState({ token, authenticated: true });
       } else {
         setAuthState({ token: null, authenticated: false });
       }

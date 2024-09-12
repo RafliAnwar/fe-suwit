@@ -9,7 +9,8 @@
         "TZ": "Asia/Jakarta"
     },
     "runArgs": [
-        "--shm-size=4g"
+        "--shm-size=4g",
+        "--network=host"
     ],
     "customizations": {
         "vscode": {
