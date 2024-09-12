@@ -4,8 +4,6 @@ import {
   Text,
   TextInput,
   TouchableOpacity,
-  StyleSheet,
-  Image,
   ImageBackground,
 } from "react-native";
 import { useNavigation } from "@react-navigation/native";

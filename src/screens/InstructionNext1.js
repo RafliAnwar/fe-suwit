@@ -1,16 +1,21 @@
 import React from "react";
-import { ImageBackground, StyleSheet, Dimensions, TouchableOpacity, Text,View } from "react-native";
-// import { View } from "react-native-web";
-import { useNavigation } from '@react-navigation/native';
+import {
+  ImageBackground,
+  StyleSheet,
+  Dimensions,
+  TouchableOpacity,
+  Text,
+  View,
+} from "react-native";
+import { useNavigation } from "@react-navigation/native";
 
 const { width, height } = Dimensions.get("window");
 
 const InstructionNext1 = () => {
-
-    const navigation = useNavigation();
-    const next1 = () => {
-        navigation.navigate('InstructionNext2');
-    };  
+  const navigation = useNavigation();
+  const next1 = () => {
+    navigation.navigate("InstructionNext2");
+  };
 
   return (
     <ImageBackground
@@ -18,11 +23,11 @@ const InstructionNext1 = () => {
       style={styles.background}
       resizeMode="cover" // Mengatur mode gambar agar cover penuh
     >
-    <View>
+      <View>
         <TouchableOpacity style={styles.nextButton} onPress={next1}>
-            <Text style={styles.nextButtonText}>Next</Text>
+          <Text style={styles.nextButtonText}>Next</Text>
         </TouchableOpacity>
-    </View>
+      </View>
     </ImageBackground>
   );
 };
@@ -32,7 +37,7 @@ const styles = StyleSheet.create({
     flex: 1,
     width: width, // Mengisi seluruh lebar layar
     height: height, // Mengisi seluruh tinggi layar
-    marginTop: 30
+    marginTop: 30,
   },
   nextButton: {
     backgroundColor: "#FFD700",
@@ -42,7 +47,6 @@ const styles = StyleSheet.create({
     alignSelf: "flex-start", // Menempatkan tombol di kiri layar
     marginLeft: 7,
     marginTop: 690, // Menambahkan ruang semua elemen untuk mendorong ke atas. untuk tombol next ke bawah
-   
   },
   nextButtonText: {
     fontSize: 24,

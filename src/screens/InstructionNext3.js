@@ -5,19 +5,16 @@ import {
   Dimensions,
   TouchableOpacity,
   Text,
-  View
+  View,
 } from "react-native";
-// import { View } from "react-native-web";
 import { useNavigation } from "@react-navigation/native";
 
 const { width, height } = Dimensions.get("window");
 
 const InstructionNext3 = () => {
-
-
   const navigation = useNavigation();
   const playy = () => {
-    navigation.navigate("Instruction");  // nanti diubah ke halaman instruksi manual
+    navigation.navigate("Instruction"); // nanti diubah ke halaman instruksi manual
   };
   return (
     <ImageBackground
@@ -39,7 +36,7 @@ const styles = StyleSheet.create({
     flex: 1,
     width: width, // Mengisi seluruh lebar layar
     height: height, // Mengisi seluruh tinggi layar
-    marginTop: 30
+    marginTop: 30,
   },
   nextButton: {
     backgroundColor: "#FFD700",
