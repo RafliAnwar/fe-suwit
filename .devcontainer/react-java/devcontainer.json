@@ -1,16 +1,29 @@
 {
-    "name": "node-devel",
+    "name": "react-java-devel",
     "privileged": true,
     "remoteUser": "node",
     "image": "mcr.microsoft.com/devcontainers/typescript-node:1-20-bookworm",
+    "features": {
+        "ghcr.io/devcontainers/features/java:1": {
+            "version": "21",
+            "installMaven": "false",
+            "installGradle": "true",
+            "gradleVersion": "8.8"
+            // "mavenVersion": "3.9.8"
+        }
+    },
     "workspaceFolder": "/workspace",
     "workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind",
     "containerEnv": {
         "TZ": "Asia/Jakarta"
     },
+    "mounts": [
+        "source=/home/didi/Android/Sdk,target=/home/node/Android/sdk,type=bind"
+    ],
     "runArgs": [
         "--shm-size=4g",
-        "--network=host"
+        "--network=host",
+        "--device=/dev/bus/usb"
     ],
     "customizations": {
         "vscode": {
@@ -26,5 +39,6 @@
                 "yzhang.markdown-all-in-one"
             ]
         }
-    }
+    },
+    "postCreateCommand": "sudo apt-get update && sudo apt-get install -y adb && sudo usermod -aG plugdev node"
 }
