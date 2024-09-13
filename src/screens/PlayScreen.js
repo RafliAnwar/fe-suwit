@@ -27,6 +27,7 @@ const PlayScreen = () => {
   const [compScore, setCompScore] = useState(0); // State skor komputer
   const [username, setUsername] = useState("");
   const { authState } = useAuth();
+  const [isRandomizing, setIsRandomizing] = useState(true); // State untuk mengontrol randomisasi komputer
 
   const goToHome = () => {
     navigation.navigate("GameScreen");
@@ -84,6 +85,8 @@ const PlayScreen = () => {
 
   // Function untuk mengubah gambar dan hitung skor berdasarkan pilihan
   const handleChoice = (choice) => {
+    setIsRandomizing(false); // Hentikan randomisasi saat pemain memilih
+
     // Mengubah pilihan pemain
     let playerPick;
     switch (choice) {
@@ -130,9 +133,29 @@ const PlayScreen = () => {
         navigation.navigate("LoseScreen"); // Arahkan ke halaman kalah
       }
     }
+
+    // Berhenti sejenak sebelum melanjutkan randomisasi kembali
+    setTimeout(() => {
+      setIsRandomizing(true); // Mulai randomisasi lagi setelah 1 detik
+    }, 1000);
+
     // Tambah ronde setelah pemain memilih
     setRound((prevRound) => prevRound + 1);
   };
+
+  // Function untuk random pilihan komputer terus menerus
+  useEffect(() => {
+    let interval;
+    if (isRandomizing) {
+      interval = setInterval(() => {
+        const randomIndex = Math.floor(Math.random() * choices.length);
+        setCompChoice(choices[randomIndex].image);
+      }, 100); // Random setiap 100ms
+    } else {
+      clearInterval(interval); // Hentikan randomisasi
+    }
+    return () => clearInterval(interval);
+  }, [isRandomizing]);
 
   return (
     <View style={styles.screen}>
