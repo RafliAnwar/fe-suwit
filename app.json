@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "frontend-rps",
-    "slug": "frontend-rps",
+    "name": "SuwitGame",
+    "slug": "SuwitGame",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -22,9 +22,6 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    },
-    "plugins": [
-      "expo-secure-store"
-    ]
+    }
   }
 }
