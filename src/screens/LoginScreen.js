@@ -19,7 +19,7 @@ const LoginScreen = () => {
   const handleLogin = async () => {
     const response = await onLogin(username, password);
     if (response && response.error) {
-      alert(response.msg);
+      alert(`username or password is incorrect!`);
     } else {
       navigation.navigate("GameScreen");
     }
@@ -27,7 +27,7 @@ const LoginScreen = () => {
 
   return (
     <ImageBackground
-      source={require("../assets/Login.png")}
+      source={require("../assets/loginBaru.png")}
       style={styles.background}
     >
       {/* <View>
@@ -94,30 +94,30 @@ const styles = {
     justifyContent: "center",
   },
   emailContainer: {
-    flexDirection: "row",
-    alignItems: "center",
+    flexDirection: 'row',
+    alignItems: 'center',
     marginTop: 400,
     marginVertical: 10,
     borderWidth: 1,
-    borderColor: "#ccc",
+    borderColor: '#ccc',
     borderRadius: 20,
     padding: 10,
     width: "70%",
-    backgroundColor: "#0ec6dE",
-    alignSelf: "center",
+    backgroundColor: "#C2E7FF",
+    alignSelf: 'center',
   },
   passContainer: {
-    position: "relative",
-    flexDirection: "row",
-    alignItems: "center",
+    position: 'relative',
+    flexDirection: 'row',
+    alignItems: 'center',
     marginVertical: 10,
     borderWidth: 1,
-    borderColor: "#ccc",
+    borderColor: '#ccc',
     borderRadius: 20,
     padding: 10,
     width: "70%",
-    backgroundColor: "#0ec6dE",
-    alignSelf: "center",
+    backgroundColor: "#C2E7FF",
+    alignSelf: 'center',
   },
   emailInput: {
     flex: 1,
@@ -151,6 +151,10 @@ const styles = {
     shadowRadius: 3,
     alignSelf: "center",
   },
+
+  loginText: {
+    fontWeight: 'bold',
+},
 
   forgot: {
     textDecorationLine: "underline",

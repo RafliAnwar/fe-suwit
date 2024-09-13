@@ -44,12 +44,12 @@ const GameScreen = ({ navigation }) => {
           <Text style={styles.buttonText}>Instruction</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity
+        {/* <TouchableOpacity
           style={[styles.button, styles.exitButton]}
           onPress={handleLogout} // Navigasi ke Win Screen
         >
           <Text style={styles.buttonText}>Logout</Text>
-        </TouchableOpacity>
+        </TouchableOpacity> */}
 
         <TouchableOpacity
           style={[styles.button, styles.exitButton]}
