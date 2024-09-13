@@ -14,12 +14,12 @@ const InstructionScreen = ({ navigation }) => {
       {/* Header */}
       <View style={styles.header}>
         <Image
-          source={require("../assets/emoji2.png")} // Ganti dengan path gambar emoji atas kiri
+          source={require("../assets/emoji2.png")}
           style={styles.emojiTopLeft}
         />
         <Text style={styles.headerText}>Instruction</Text>
         <Image
-          source={require("../assets/Fill.png")} // Ganti dengan path gambar emoji atas kanan
+          source={require("../assets/Fill.png")}
           style={styles.emojiTopRight}
         />
       </View>
@@ -27,12 +27,11 @@ const InstructionScreen = ({ navigation }) => {
       {/* Content */}
       <ScrollView contentContainerStyle={styles.content}>
         <Text style={styles.instructionText}>
-          • Pemain dapat memilih dari 3 pilihan, batu gunting dan kertas{"\n"}•
-          Pemain melawan computer{"\n"}• Sistem yang digunakan berupa poin, +1
-          jika menang, 0 jika kalah dan draw dalam permainan{"\n"}• Jumlah Poin
-          untuk memenangkan permainan adalah 3 poin (Mintol){"\n"}• Jika
-          permainan selesai, pemain dapat melakukan permainan Kembali atau
-          memilih Kembali ke menu awal
+        • Pemain dapat memilih dari 3 pilihan, batu gunting dan kertas{"\n\n"}
+        • Pemain melawan computer{"\n\n"}
+        • Sistem yang digunakan berupa poin, +1 jika menang, 0 jika kalah dan draw dalam permainan{"\n\n"}
+        • Jumlah Poin untuk memenangkan permainan adalah 5 poin{"\n\n"}
+        • Jika permainan selesai, pemain dapat melakukan permainan Kembali atau memilih Kembali ke menu awal
         </Text>
       </ScrollView>
 
@@ -41,7 +40,7 @@ const InstructionScreen = ({ navigation }) => {
         onPress={() => navigation.navigate("PlayScreen")}
       >
         <Image
-          source={require("../assets/emoji1.png")} // Ganti dengan path gambar emoji bawah kanan
+          source={require("../assets/emoji1.png")}
           style={styles.emojiBottomRight}
         />
         <Text style={styles.startButtonText}>Start Game</Text>
@@ -55,52 +54,53 @@ const InstructionScreen = ({ navigation }) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "white", // Warna background halaman
+    backgroundColor: "white",
   },
-  header: { // Warna background button
+  header: {
     padding: 15,
     borderRadius: 10,
-    marginTop: 100,
-    marginLeft: 40,
-    width: 300,
-    height: 60,
-    alignItems: "center",
+    marginTop: 50,
+    marginHorizontal: 20,
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   headerText: {
-    top: 60,
-    left: 30,
-    position: 'absolute',
-    marginLeft: 60,
-    fontSize: 36,
-    fontWeight: 'bold',
-    color: '#7FC8F8', // Warna teks pada header
-    textShadowColor: 'black', // Warna stroke
-    textShadowOffset: { width: -2, height: 2 }, // Offset bayangan
-    textShadowRadius: 2, // Radius bayangan
+    fontSize: 40,
+    fontWeight: "bold",
+    color: "#0EC6DE",
+    marginLeft : 45,
+    marginTop: 10,
+    textAlign: 'center',
+    textShadowColor: '#000', // Warna stroke,
+    textShadowOffset: { width: -1, height: 1 }, // Offset stroke
+    textShadowRadius: 2, // Radius stroke
   },
   emojiTopLeft: {
-    width: 70,
-    height: 80,
+    width: 80,
+    height: 90,
     position: "absolute",
     left: 10,
-    top: 25,
+    top: 10,
+    alignSelf : 50,
   },
   emojiTopRight: {
-    width: 400,
-    height: 400,
-    marginTop: -370,
+    width: 600,
+    height: 500,
+    marginTop:-480,
     position: "absolute",
-    alignSelf: "center",
-    zIndex: -200,
+    alignSelf:'center',
+    right: -50,
+    zIndex:-1,
   },
   emojiRight: {
     width: 500,
     height: 500,
-    marginTop: 650,
+    marginTop:580,
     position: "absolute",
-    alignSelf: "center",
-    right: 0,
-    zIndex: -99,
+    alignSelf:'center',
+    right:0,
+    bottom:-280,
   },
   content: {
     padding: 20,
@@ -108,32 +108,31 @@ const styles = StyleSheet.create({
   },
   instructionText: {
     fontSize: 16,
-    color: "#333",
+    color: "black", // Warna teks biru
     lineHeight: 24,
-    marginTop: 90,
-    fontWeight: "bold",
+    textAlign: 'left', // Untuk penataan yang lebih baik
+    marginTop: 20,
   },
   startButton: {
-    backgroundColor: "#FDD835", // Warna background button
-    padding: 15,
+    backgroundColor: "#FDD835",
+    padding: 5,
     borderRadius: 10,
     marginBottom: 200,
-    marginLeft: 40,
-    width: 300,
-    height: 50,
+    marginHorizontal: 20,
     alignItems: "center",
+    flexDirection: 'row',
+    height:50,
   },
   startButtonText: {
     fontSize: 20,
     fontWeight: "bold",
-    color: "#ffffff", // Warna teks pada tombol
+    color: "#ffffff",
+    marginLeft: 10,
   },
-  emojiBottomRight: {
-    width: 70,
-    height: 80,
-    position: "absolute",
-    right: 10,
-    bottom: -40,
+  emojiBottomRight: { //tengkorak bawah
+    width: 90,
+    height: 110,
+    right:-240,
   },
 });
 

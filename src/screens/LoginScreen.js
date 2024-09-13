@@ -97,7 +97,7 @@ const styles = {
   emailContainer: {
     flexDirection: 'row',
     alignItems: 'center',
-    marginTop: 400,
+    marginTop: 410,
     marginVertical: 10,
     borderWidth: 1,
     borderColor: '#ccc',
