@@ -118,10 +118,10 @@ const styles = StyleSheet.create({
     backgroundColor: "#FFDB0A", // Warna tombol Exit
   },
   exitButton: {
-    backgroundColor: "#E25532", // Warna tombol Exit
+    backgroundColor: "#ff6392", // Warna tombol Exit
   },
   buttonText: {
-    color: "white",
+    color: "black",
     fontSize: 16,
     fontWeight: "bold",
   },

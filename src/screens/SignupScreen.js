@@ -99,13 +99,14 @@ const styles = StyleSheet.create({
     alignItems: "center", // Centers content horizontally
   },
   inputContainer: {
+    marginTop: 50,
     marginVertical: 10,
     borderWidth: 1,
     borderColor: "#ccc",
     borderRadius: 20,
     padding: 10,
     width: "70%",
-    backgroundColor: "#0ec6dE",
+    backgroundColor: "#C2E7FF",
   },
   input: {
     height: 30,
@@ -123,7 +124,7 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     padding: 10,
     width: "70%",
-    backgroundColor: "#0ec6dE",
+    backgroundColor: "#C2E7FF",
   },
   toggleButton: {
     position: "absolute",
@@ -132,15 +133,16 @@ const styles = StyleSheet.create({
   },
   loginBtn: {
     backgroundColor: "#FFDB0A",
-    borderRadius: 20,
+    borderRadius: 10,
     padding: 10,
-    width: "40%",
+    width: "70%",
     alignItems: "center",
     marginTop: 10,
     shadowColor: "#171717",
     shadowOffset: { width: -2, height: 4 },
     shadowOpacity: 0.2,
     shadowRadius: 3,
+    fontWeight: 'bold'
   },
   signUpBtn: {
     position: "absolute",
@@ -150,6 +152,9 @@ const styles = StyleSheet.create({
   forgot: {
     textDecorationLine: "underline",
     color: "#0ec6dE",
+  },
+  loginText: {
+    fontWeight: 'bold',
   },
 });
 

@@ -63,7 +63,7 @@ const LoginScreen = () => {
       </View>
 
       <TouchableOpacity style={styles.loginBtn} onPress={handleLogin}>
-        <Text style={styles.loginText}>LOGIN </Text>
+        <Text style={styles.loginText}>Login</Text>
       </TouchableOpacity>
 
       {/* sign up */}
@@ -92,6 +92,7 @@ const styles = {
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "center",
+    fontWeight: 'bold'
   },
   emailContainer: {
     flexDirection: 'row',
@@ -140,9 +141,9 @@ const styles = {
   },
   loginBtn: {
     backgroundColor: "#FFDB0A",
-    borderRadius: 20,
+    borderRadius: 10,
     padding: 10,
-    width: "40%",
+    width: "70%",
     alignItems: "center",
     marginTop: 10,
     shadowColor: "#171717",

@@ -57,26 +57,26 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "white", // Warna background halaman
   },
-  header: {
-    // backgroundColor: '#FDD835', // Warna background header
-    // flexDirection: 'row',
-    // justifyContent: 'center',
-    // alignItems: 'center',
-    // padding: 10,
-
-    backgroundColor: "#FDD835", // Warna background button
+  header: { // Warna background button
     padding: 15,
     borderRadius: 10,
     marginTop: 100,
     marginLeft: 40,
     width: 300,
-    height: 50,
+    height: 60,
     alignItems: "center",
   },
   headerText: {
-    fontSize: 22,
-    fontWeight: "bold",
-    color: "#ffffff", // Warna teks pada header
+    top: 60,
+    left: 30,
+    position: 'absolute',
+    marginLeft: 60,
+    fontSize: 36,
+    fontWeight: 'bold',
+    color: '#7FC8F8', // Warna teks pada header
+    textShadowColor: 'black', // Warna stroke
+    textShadowOffset: { width: -2, height: 2 }, // Offset bayangan
+    textShadowRadius: 2, // Radius bayangan
   },
   emojiTopLeft: {
     width: 70,
