@@ -91,7 +91,7 @@ const styles = StyleSheet.create({
     height: 250,
     resizeMode: "stretch",
     position: "absolute",
-    bottom: 0,
+    bottom: -40,
   },
   logo: {
     width: 350,
