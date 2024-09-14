@@ -35,9 +35,10 @@ const InstructionNext2 = () => {
 const styles = StyleSheet.create({
   background: {
     flex: 1,
-    width: width, // Mengisi seluruh lebar layar
-    height: height, // Mengisi seluruh tinggi layar
-    marginTop: 30,
+    // width: width, // Mengisi seluruh lebar layar
+    // height: height, // Mengisi seluruh tinggi layar
+    // marginTop: 30,
+    resizeMode: "cover"
   },
   nextButton: {
     backgroundColor: "#0EC6DE",
@@ -46,7 +47,7 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     alignSelf: "flex-start", // Menempatkan tombol di kiri layar
     marginLeft: 7,
-    marginTop: 690, // Menambahkan ruang semua elemen untuk mendorong ke atas. untuk tombol next ke bawah
+    marginTop: 680, // Menambahkan ruang semua elemen untuk mendorong ke atas. untuk tombol next ke bawah
   },
   nextButtonText: {
     fontSize: 24,
