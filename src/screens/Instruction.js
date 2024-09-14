@@ -30,11 +30,11 @@ const InstructionScreen = () => {
       {/* Content */}
       <ScrollView contentContainerStyle={styles.content}>
         <Text style={styles.instructionText}>
-          • Pemain dapat memilih dari 3 pilihan, batu gunting dan kertas{"\n\n"}
-          • Pemain melawan computer{"\n\n"}
+          • Pemain dapat memilih dari 3 pilihan, batu gunting dan kertas{"\n"}
+          • Pemain melawan computer{"\n"}
           • Sistem yang digunakan berupa poin, +1 jika menang, 0 jika kalah dan
-          draw dalam permainan{"\n\n"}
-          • Jumlah Poin untuk memenangkan permainan adalah 5 poin{"\n\n"}
+          draw dalam permainan{"\n"}
+          • Jumlah Poin untuk memenangkan permainan adalah 5 poin{"\n"}
           • Jika permainan selesai, pemain dapat melakukan permainan kembali
           atau memilih ke menu awal
         </Text>
@@ -117,7 +117,7 @@ const styles = StyleSheet.create({
     color: "black",
     lineHeight: 24,
     textAlign: 'justify',
-    marginTop: 60,
+    marginTop: 40,
 
   },
   startButton: {
