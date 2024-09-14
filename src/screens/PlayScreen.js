@@ -262,7 +262,7 @@ const styles = StyleSheet.create({
   rondeText: {
     fontSize: 24,
     fontWeight: "bold",
-    color: "#0EC6DE",
+    color: "#fff",
   },
   rpsContainer: {
     flexDirection: "row",

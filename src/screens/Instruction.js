@@ -35,8 +35,8 @@ const InstructionScreen = () => {
           • Sistem yang digunakan berupa poin, +1 jika menang, 0 jika kalah dan
           draw dalam permainan{"\n\n"}
           • Jumlah Poin untuk memenangkan permainan adalah 5 poin{"\n\n"}
-          • Jika permainan selesai, pemain dapat melakukan permainan Kembali
-          atau memilih Kembali ke menu awal
+          • Jika permainan selesai, pemain dapat melakukan permainan kembali
+          atau memilih ke menu awal
         </Text>
       </ScrollView>
 
@@ -112,13 +112,13 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   instructionText: {
-    fontSize: 14,
+    fontSize: 18,
     fontWeight:'bold',
     color: "black",
     lineHeight: 24,
     textAlign: 'justify',
-    marginTop: 0,
-    fontFamily:'OpenSans',
+    marginTop: 60,
+
   },
   startButton: {
     backgroundColor: "#FDD835",

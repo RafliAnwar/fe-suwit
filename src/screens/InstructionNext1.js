@@ -46,7 +46,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
     borderRadius: 5,
     alignSelf: "flex-start", // Menempatkan tombol di kiri layar
-    marginLeft: 7,
+    marginLeft: 30,
     marginTop: 680
 , // Menambahkan ruang semua elemen untuk mendorong ke atas. untuk tombol next ke bawah
   },

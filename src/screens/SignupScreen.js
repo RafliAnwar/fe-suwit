@@ -55,7 +55,7 @@ const SignupScreen = () => {
           <TextInput
             style={styles.input}
             placeholder="Username"
-            placeholderTextColor="#003f5c"
+            placeholderTextColor="#000"
             value={username}
             onChangeText={(text) => setUsername(String(text))}
           />
@@ -65,7 +65,7 @@ const SignupScreen = () => {
           <TextInput
             style={styles.input}
             placeholder="Password"
-            placeholderTextColor="#003f5c"
+            placeholderTextColor="#000"
             secureTextEntry={!passwordVisible}
             value={password}
             onChangeText={(text) => setPassword(String(text))}
@@ -99,7 +99,7 @@ const styles = StyleSheet.create({
     alignItems: "center", // Centers content horizontally
   },
   inputContainer: {
-    marginTop: 50,
+    marginTop: 150,
     marginVertical: 10,
     borderWidth: 1,
     borderColor: "#ccc",
