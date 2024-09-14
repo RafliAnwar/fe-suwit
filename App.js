@@ -40,13 +40,14 @@ function App() {
         }}
       >
         <Stack.Navigator>
-          <Stack.Screen
+        <Stack.Screen
             name="Splash"
             component={Splash}
             options={{
               headerShown: false,
             }}
           />
+            
           <Stack.Screen
             name="LoginScreen"
             component={LoginScreen}

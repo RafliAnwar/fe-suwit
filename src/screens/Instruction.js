@@ -7,8 +7,11 @@ import {
   TouchableOpacity,
   ScrollView,
 } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 
-const InstructionScreen = ({ navigation }) => {
+const InstructionScreen = () => {
+  const navigation = useNavigation(); // Menggunakan useNavigation untuk mengakses navigasi
+
   return (
     <View style={styles.container}>
       {/* Header */}
@@ -27,11 +30,13 @@ const InstructionScreen = ({ navigation }) => {
       {/* Content */}
       <ScrollView contentContainerStyle={styles.content}>
         <Text style={styles.instructionText}>
-        • Pemain dapat memilih dari 3 pilihan, batu gunting dan kertas{"\n\n"}
-        • Pemain melawan computer{"\n\n"}
-        • Sistem yang digunakan berupa poin, +1 jika menang, 0 jika kalah dan draw dalam permainan{"\n\n"}
-        • Jumlah Poin untuk memenangkan permainan adalah 5 poin{"\n\n"}
-        • Jika permainan selesai, pemain dapat melakukan permainan Kembali atau memilih Kembali ke menu awal
+          • Pemain dapat memilih dari 3 pilihan, batu gunting dan kertas{"\n\n"}
+          • Pemain melawan computer{"\n\n"}
+          • Sistem yang digunakan berupa poin, +1 jika menang, 0 jika kalah dan
+          draw dalam permainan{"\n\n"}
+          • Jumlah Poin untuk memenangkan permainan adalah 5 poin{"\n\n"}
+          • Jika permainan selesai, pemain dapat melakukan permainan Kembali
+          atau memilih Kembali ke menu awal
         </Text>
       </ScrollView>
 
@@ -69,11 +74,11 @@ const styles = StyleSheet.create({
     fontSize: 40,
     fontWeight: "bold",
     color: "#0EC6DE",
-    marginLeft : 45,
-    marginTop: 10,
+    marginLeft: 65,
+    marginTop: 100,
     textAlign: 'center',
-    textShadowColor: '#000', // Warna stroke,
-    textShadowOffset: { width: -1, height: 1 }, // Offset stroke
+    textShadowColor: 'black', // Warna stroke
+    textShadowOffset: { width: -2, height: 1 }, // Offset stroke
     textShadowRadius: 2, // Radius stroke
   },
   emojiTopLeft: {
@@ -81,58 +86,61 @@ const styles = StyleSheet.create({
     height: 90,
     position: "absolute",
     left: 10,
-    top: 10,
-    alignSelf : 50,
+    top: 80,
   },
   emojiTopRight: {
     width: 600,
     height: 500,
-    marginTop:-480,
+    // marginTop: -100,
     position: "absolute",
-    alignSelf:'center',
+    alignSelf: 'center',
     right: -50,
-    zIndex:-1,
+    zIndex: -1,
+    top:-380,
   },
   emojiRight: {
     width: 500,
     height: 500,
-    marginTop:580,
     position: "absolute",
-    alignSelf:'center',
-    right:0,
-    bottom:-280,
+    alignSelf: 'center',
+    right: 0,
+    bottom: -320,
+    zIndex:-99,
   },
   content: {
     padding: 20,
     alignItems: "center",
   },
   instructionText: {
-    fontSize: 16,
-    color: "black", // Warna teks biru
+    fontSize: 14,
+    fontWeight:'bold',
+    color: "black",
     lineHeight: 24,
-    textAlign: 'left', // Untuk penataan yang lebih baik
-    marginTop: 20,
+    textAlign: 'justify',
+    marginTop: 0,
+    fontFamily:'OpenSans',
   },
   startButton: {
     backgroundColor: "#FDD835",
     padding: 5,
     borderRadius: 10,
-    marginBottom: 200,
+    marginBottom: 150,
     marginHorizontal: 20,
     alignItems: "center",
     flexDirection: 'row',
-    height:50,
+    height: 50,
   },
   startButtonText: {
     fontSize: 20,
     fontWeight: "bold",
-    color: "#ffffff",
-    marginLeft: 10,
+    color: "black",
+    marginLeft: 25,
   },
-  emojiBottomRight: { //tengkorak bawah
-    width: 90,
-    height: 110,
-    right:-240,
+  emojiBottomRight: { //tengkorak
+    width: 80,
+    height: 95,
+    bottom:-40,
+    right: -222,
   },
 });
 
